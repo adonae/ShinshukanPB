@@ -1,0 +1,27 @@
+.container00 {
+    &.container01 {
+        background-image: url(../../img/communPages/bg-home.jpg);
+    }
+}
+
+.titlePadding {
+    padding-top: 200px;
+}
+
+.titleTigre {
+    color: white;
+    text-shadow: 2px 2px black;
+}
+
+.card {
+    border: 2px solid black;
+}
+
+.card-title {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.card-text {
+    text-align: justify;
+}
