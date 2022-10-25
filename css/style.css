@@ -11,7 +11,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #f1faee;
+  background-color: #EEEEEE;
 }
 
 .arrowDown {
@@ -116,8 +116,51 @@
   padding-right: 5px;
 }
 
-.scroll {
+.boxKobudo {
   height: 500px;
+  overflow: scroll;
+}
+
+.container00.carrossel01 {
+  background-image: url(../img/kobudo/bo.png);
+  background-size: 30%;
+  background-position: 75% 35%;
+}
+
+.container00.carrossel02 {
+  background-image: url(../img/kobudo/nunchaku.png);
+  background-size: 30%;
+  background-position: 75% 35%;
+}
+
+.container00.carrossel03 {
+  background-image: url(../img/kobudo/tunqua.png);
+  background-size: 30%;
+  background-position: 75% 35%;
+}
+
+.container00.carrossel04 {
+  background-image: url(../img/kobudo/kama.png);
+  background-size: 30%;
+  background-position: 75% 35%;
+}
+
+.container00.carrossel05 {
+  background-image: url(../img/kobudo/sai.png);
+  background-size: 30%;
+  background-position: 75% 35%;
+}
+
+.container00.carrossel06 {
+  background-image: url(../img/kobudo/eku.png);
+  background-size: 30%;
+  background-position: 75% 35%;
+}
+
+#overViewPosition {
+  width: 500px;
+  margin-left: 13%;
+  padding-top: 1%;
 }
 
 .container00.container03 {

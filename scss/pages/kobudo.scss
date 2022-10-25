@@ -4,6 +4,51 @@
     padding-right: 5px;
 }
 
-.scroll {
+.boxKobudo {
     height: 500px;
+    overflow: scroll;
+}
+
+.container00 {
+    &.carrossel01 {
+        background-image: url(../../img/kobudo/bo.png);
+        background-size: 30%;
+        background-position: 75% 35%;
+    }
+
+    &.carrossel02 {
+        background-image: url(../../img/kobudo/nunchaku.png);
+        background-size: 30%;
+        background-position: 75% 35%;
+    }
+
+    &.carrossel03 {
+        background-image: url(../../img/kobudo/tunqua.png);
+        background-size: 30%;
+        background-position: 75% 35%;
+    }
+
+    &.carrossel04 {
+        background-image: url(../../img/kobudo/kama.png);
+        background-size: 30%;
+        background-position: 75% 35%;
+    }
+
+    &.carrossel05 {
+        background-image: url(../../img/kobudo/sai.png);
+        background-size: 30%;
+        background-position: 75% 35%;
+    }
+
+    &.carrossel06 {
+        background-image: url(../../img/kobudo/eku.png);
+        background-size: 30%;
+        background-position: 75% 35%;
+    }
+}
+
+#overViewPosition {
+    width: 500px;
+    margin-left: 13%;
+    padding-top: 1%;
 }
