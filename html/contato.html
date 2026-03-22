@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Entre em contato com a Tigre Branco Paraiba para horarios, turmas e informacoes sobre aulas de Karate e Kobudo.">
 
     <!-- BOOTSTRAP CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -26,46 +28,56 @@
 </head>
 
 <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteudo principal</a>
     <div class="container-fluid container00">
         <div class="container00 container03">
             <div class="container">
                 <header class="header">
-                    <nav class="navbar navbar-expand-lg bg-transparent" style="font-size: 18px; color: white;">
+                    <nav class="navbar navbar-expand-lg bg-transparent main-navbar" aria-label="Navegacao principal">
                         <div class="container-fluid">
-                            <a class="navbar-brand" style="color: white;" href="../home.html">
+                            <a class="navbar-brand text-white" href="../home.html">
                                 <img src="../img/communPages/tigre-branco-favicon.svg" alt="Logo" width="30" height="30"
                                     class="d-inline-block align-text-center">
                                 Tigre Branco
                             </a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                                aria-label="Abrir menu">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
                             <div class="collapse navbar-collapse" id="navbarNav">
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" style="color: white;" href="#" role="button"
+                                        <a class="nav-link dropdown-toggle text-white" href="#" role="button"
                                             data-bs-toggle="dropdown" aria-expanded="false">Karatê</a>
                                         <ul class="dropdown-menu dropMenu">
                                             <li><a class="nav-item dropMenuStyle" href="./karate.html">Historia</a></li>
                                             <li><a class="nav-item dropMenuStyle"
                                                     href="./karateGenealogia.html">Genealogia</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" href="./kobudo.html">Kobu-do</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" href="./contato.html">Contato</a>
                                     </li>
                                 </ul>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="./kobudo.html" style="color: white;">Kobu-do</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="./contato.html" style="color: white;">Contato</a>
-                                </li>
                             </div>
-                            <div class="d-flex align-items-center">
-                                <a class="text-reset me-3" target="_blank"
+                            <div class="d-flex align-items-center social-links">
+                                <a class="text-reset me-3" target="_blank" rel="noopener noreferrer"
+                                    aria-label="Conversar no WhatsApp"
                                     href="https://api.whatsapp.com/send?1=pt_BR&phone=5583986344422"><i
                                         class="bi bi-whatsapp"></i></a>
-                                <a class="text-reset me-3" target="_blank"
-                                    href="https://www.instagram.com/wagnertigrebranco"><i
-                                        class="bi bi-instagram"></i></i></a>
-                                <a class="text-reset me-3" target="_blank"
+                                <a class="text-reset me-3" target="_blank" rel="noopener noreferrer"
+                                    aria-label="Perfil no Instagram" href="https://www.instagram.com/wagnertigrebranco"><i
+                                        class="bi bi-instagram"></i></a>
+                                <a class="text-reset me-3" target="_blank" rel="noopener noreferrer"
+                                    aria-label="Pagina no Facebook"
                                     href="https://www.facebook.com/tigrebrancoparaiba"><i
                                         class="bi bi-facebook"></i></a>
-                                <a class="text-reset me-3" target="_blank"
+                                <a class="text-reset me-3" target="_blank" rel="noopener noreferrer"
+                                    aria-label="Canal no YouTube"
                                     href="https://www.youtube.com/channel/UC96yPCGsgWlOI8CqJpohSKA"><i
                                         class="bi bi-youtube"></i></a>
                             </div>
@@ -73,39 +85,61 @@
                     </nav>
                 </header>
             </div>
-            <div class="container contact-form">
+            <main id="conteudo" class="container contact-form">
                 <div class="contact-image">
-                    <img src="../img/contato/tigre.jpg" alt="tigre" class="tigre">
+                    <img src="../img/contato/tigre.jpg" alt="Mascote Tigre Branco" class="tigre" loading="lazy"
+                        decoding="async">
                 </div>
-                <form method="post">
+                <form id="contactForm" action="https://formsubmit.co/tigrebrancowagner@gmail.com" method="POST"
+                    class="needs-validation" novalidate>
+                    <input type="hidden" name="_subject" value="Novo contato pelo site Tigre Branco">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
                     <h3>Envie sua mensagem</h3>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" name="txtName" class="form-control" placeholder="Seu nome"
-                                    value="" />
+                                <label for="txtName" class="form-label">Seu nome</label>
+                                <input id="txtName" type="text" name="txtName" class="form-control"
+                                    placeholder="Seu nome" autocomplete="name" required />
+                                <div class="invalid-feedback">Informe seu nome completo.</div>
                             </div>
                             <div class="form-group">
-                                <input type="text" name="txtEmail" class="form-control" placeholder="Seu email"
-                                    value="" />
+                                <label for="txtEmail" class="form-label">Seu email</label>
+                                <input id="txtEmail" type="email" name="txtEmail" class="form-control"
+                                    placeholder="Seu email" autocomplete="email" required />
+                                <div class="invalid-feedback">Informe um email valido.</div>
                             </div>
                             <div class="form-group">
-                                <input type="text" name="txtSubject" class="form-control" placeholder="Assunto"
-                                    value="" />
+                                <label for="txtPhone" class="form-label">Telefone (WhatsApp)</label>
+                                <input id="txtPhone" type="tel" name="txtPhone" class="form-control"
+                                    placeholder="(83) 99999-9999" autocomplete="tel"
+                                    pattern="^\+?[0-9\s\-\(\)]{10,18}$" required />
+                                <div class="invalid-feedback">Informe um numero de telefone/WhatsApp valido.</div>
                             </div>
                             <div class="form-group">
-                                <input type="submit" name="btnSubmit" class="btnContact" value="Enviar" />
+                                <label for="txtSubject" class="form-label">Assunto</label>
+                                <input id="txtSubject" type="text" name="txtSubject" class="form-control"
+                                    placeholder="Assunto" required />
+                                <div class="invalid-feedback">Informe o assunto da mensagem.</div>
                             </div>
+                            <div class="form-group contact-actions">
+                                <input type="submit" name="btnSubmit" class="btnContact" value="Enviar por Email" />
+                                <button type="button" id="sendWhatsappBtn" class="btnWhatsapp">Enviar por WhatsApp</button>
+                            </div>
+                            <p id="contactFeedback" class="contact-feedback" aria-live="polite"></p>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <textarea name="txtMsg" class="form-control" placeholder="Sua mensagem"
-                                    style="width: 100%; height: 180px;"></textarea>
+                                <label for="txtMsg" class="form-label">Sua mensagem</label>
+                                <textarea id="txtMsg" name="txtMsg" class="form-control" placeholder="Sua mensagem"
+                                    style="width: 100%; height: 180px;" minlength="10" required></textarea>
+                                <div class="invalid-feedback">Escreva uma mensagem com pelo menos 10 caracteres.</div>
                             </div>
                         </div>
                     </div>
                 </form>
-            </div>
+            </main>
         </div>
 
         <div class="container" style="height: 10px;"></div>
@@ -131,12 +165,13 @@
                 </div>
                 <div class="col-2">
                     <p class="h5"><i class="bi bi-award-fill"></i> Filiação</p>
-                    <img src="../img/communPages/shinshukan.png" alt="logo-shinshukan" style="width: 100px;">
+                    <img src="../img/communPages/shinshukan.png" alt="Logo da filiacao Shinshukan" style="width: 100px;"
+                        loading="lazy" decoding="async">
                 </div>
             </div>
             <hr>
             <div class="container" style="height: 5px;"></div>
-            <p class="copy" style="text-align: center;">Copyright &copy;2022 Tigre Branco. Todos os direitos
+            <p class="copy" style="text-align: center;">Copyright &copy;2026 Tigre Branco. Todos os direitos
                 reservados.
             </p>
             <div class="container" style="height: 5px;"></div>
@@ -152,5 +187,80 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();
+        (function () {
+            'use strict';
+            const forms = document.querySelectorAll('.needs-validation');
+            Array.from(forms).forEach((form) => {
+                form.addEventListener('submit', async (event) => {
+                    event.preventDefault();
+                    if (!form.checkValidity()) {
+                        event.stopPropagation();
+                        const feedback = document.getElementById('contactFeedback');
+                        feedback.textContent = 'Preencha os campos obrigatorios para enviar.';
+                        feedback.className = 'contact-feedback error';
+                        form.classList.add('was-validated');
+                        return;
+                    }
+                    form.classList.add('was-validated');
+
+                    const feedback = document.getElementById('contactFeedback');
+                    const submitBtn = form.querySelector('input[type="submit"]');
+                    const whatsappBtn = document.getElementById('sendWhatsappBtn');
+
+                    submitBtn.disabled = true;
+                    whatsappBtn.disabled = true;
+                    submitBtn.value = 'Enviando...';
+                    feedback.textContent = 'Enviando sua mensagem...';
+                    feedback.className = 'contact-feedback pending';
+
+                    try {
+                        const response = await fetch(form.action, {
+                            method: 'POST',
+                            body: new FormData(form),
+                            headers: {
+                                Accept: 'application/json'
+                            }
+                        });
+
+                        if (!response.ok) {
+                            throw new Error('Falha no envio');
+                        }
+
+                        form.reset();
+                        form.classList.remove('was-validated');
+                        feedback.textContent = 'Mensagem enviada com sucesso. Em breve entraremos em contato.';
+                        feedback.className = 'contact-feedback success';
+                    } catch (error) {
+                        feedback.textContent = 'Nao foi possivel enviar agora. Tente novamente ou use o WhatsApp.';
+                        feedback.className = 'contact-feedback error';
+                    } finally {
+                        submitBtn.disabled = false;
+                        whatsappBtn.disabled = false;
+                        submitBtn.value = 'Enviar por Email';
+                    }
+                }, false);
+            });
+
+            const whatsappBtn = document.getElementById('sendWhatsappBtn');
+            const contactForm = document.getElementById('contactForm');
+
+            whatsappBtn.addEventListener('click', () => {
+                if (!contactForm.checkValidity()) {
+                    contactForm.classList.add('was-validated');
+                    return;
+                }
+
+                const name = document.getElementById('txtName').value.trim();
+                const email = document.getElementById('txtEmail').value.trim();
+                const phone = document.getElementById('txtPhone').value.trim();
+                const subject = document.getElementById('txtSubject').value.trim();
+                const message = document.getElementById('txtMsg').value.trim();
+
+                const text = `Ola! Meu nome e ${name}.%0AEmail: ${email}.%0AWhatsApp: ${phone}.%0AAssunto: ${subject}.%0A%0AMensagem:%0A${message}`;
+                window.open(`https://wa.me/5583986344422?text=${text}`, '_blank', 'noopener,noreferrer');
+            });
+        })();
     </script>
 </body>
+
+</html>

@@ -13,3 +13,12 @@
     float: left;
     padding-right: 5px;
 }
+
+@media (max-width: 991px) {
+    .old-karate {
+        width: 100%;
+        float: none;
+        padding-right: 0;
+        margin-bottom: 14px;
+    }
+}

@@ -118,11 +118,47 @@
   width: 35%;
   float: left;
   padding-right: 5px;
+  margin-bottom: 8px;
 }
 
 .boxKobudo {
   height: 500px;
   overflow: scroll;
+}
+
+.kobudoHistorySection {
+  padding: 8px 0 24px;
+}
+
+.kobudoHistoryCard {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #d6d6d6;
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+}
+
+.kobudoHistoryCard::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.kobudoHistoryText {
+  text-align: justify;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+.kobudoWeaponsHeader {
+  margin-top: 8px;
+  margin-bottom: 10px;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.kobudoWeaponsSub {
+  margin-bottom: 0;
 }
 
 .container00.carrossel01 {
@@ -224,7 +260,7 @@
 }
 
 .contact-form .btnContact {
-  width: 50%;
+  width: 100%;
   border: none;
   border-radius: 1rem;
   padding: 1.5%;
@@ -232,6 +268,41 @@
   font-weight: 600;
   color: #fff;
   cursor: pointer;
+}
+
+.contact-actions {
+  display: grid;
+  gap: 10px;
+}
+
+.btnWhatsapp {
+  width: 100%;
+  border: none;
+  border-radius: 1rem;
+  padding: 10px 14px;
+  background: #1f9d55;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+}
+
+.contact-feedback {
+  margin-top: 8px;
+  margin-bottom: 0;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.contact-feedback.pending {
+  color: #555;
+}
+
+.contact-feedback.success {
+  color: #1f9d55;
+}
+
+.contact-feedback.error {
+  color: #c92a2a;
 }
 
 .btnContactSubmit {
@@ -242,6 +313,168 @@
   background-color: #0062cc;
   border: none;
   cursor: pointer;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  left: 12px;
+  top: 12px;
+  width: auto;
+  height: auto;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: #fff;
+  color: #111;
+  z-index: 9999;
+}
+
+.main-navbar {
+  font-size: 18px;
+  color: #fff;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.68) 0%, rgba(0, 0, 0, 0) 100%);
+  border-radius: 0 0 12px 12px;
+  padding: 6px 10px;
+}
+
+.main-navbar .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.main-navbar .navbar-toggler-icon {
+  filter: invert(100%) brightness(2);
+}
+
+.social-links a {
+  color: #fff !important;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #00c2ff;
+  outline-offset: 2px;
+}
+
+.contact-form .form-label {
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.footer .col-2 {
+  min-width: 180px;
+}
+
+@media (max-width: 991px) {
+  .main-navbar {
+    background: rgba(0, 0, 0, 0.72);
+  }
+
+  .main-navbar .navbar-collapse {
+    margin-top: 8px;
+  }
+
+  .titlePadding {
+    padding-top: 95px;
+  }
+
+  .titleTigre {
+    font-size: clamp(2rem, 9vw, 3rem);
+    line-height: 1.1;
+  }
+
+  .subTitleTigre {
+    font-size: clamp(1.25rem, 6vw, 2rem);
+    line-height: 1.2;
+  }
+
+  .cardModalidade,
+  .cardTreinar,
+  .cardBeneficios {
+    width: 100% !important;
+    margin-bottom: 16px;
+  }
+
+  .scrollable {
+    max-height: none;
+    overflow: visible;
+  }
+
+  .old-karate,
+  .old-kobudo {
+    width: 100%;
+    float: none;
+    padding-right: 0;
+    margin-bottom: 14px;
+  }
+
+  .boxKobudo {
+    height: auto;
+    overflow: visible;
+  }
+
+  .container00.carrossel01,
+  .container00.carrossel02,
+  .container00.carrossel03,
+  .container00.carrossel04,
+  .container00.carrossel05,
+  .container00.carrossel06 {
+    background-size: 40%;
+    background-position: right 24px top 80px;
+  }
+
+  #overViewPosition {
+    width: auto;
+    margin-left: 0;
+    padding: 20px 14px;
+  }
+
+  .kobudoHistoryCard {
+    padding: 16px;
+  }
+
+  .kobudoWeaponsHeader {
+    flex-direction: column;
+    align-items: flex-start !important;
+    margin-top: 16px;
+  }
+
+  .contact-form {
+    margin: 24px auto;
+    width: 95%;
+  }
+
+  .contact-image img {
+    width: 70px;
+    margin-top: -30px;
+  }
+
+  .contact-form form {
+    padding: 10% 8%;
+  }
+
+  .contact-form h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  .contact-form .btnContact {
+    width: 100%;
+    padding: 10px 14px;
+  }
+
+  .footer .col-2 {
+    min-width: 100%;
+    margin-bottom: 12px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

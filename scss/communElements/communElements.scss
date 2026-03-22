@@ -16,6 +16,44 @@
     background-color: #EEEEEE;
 }
 
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.skip-link:focus {
+    left: 12px;
+    top: 12px;
+    width: auto;
+    height: auto;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background: #fff;
+    color: #111;
+    z-index: 9999;
+}
+
+.main-navbar {
+    font-size: 18px;
+    color: #fff;
+}
+
+.main-navbar .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+.main-navbar .navbar-toggler-icon {
+    filter: invert(100%) brightness(2);
+}
+
+.social-links a {
+    color: #fff !important;
+}
+
 .arrowDown {
     display: inline-block;
     width: 90px;
@@ -33,4 +71,10 @@
     text-decoration: none;
 }
 
-// Media Query
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #00c2ff;
+    outline-offset: 2px;
+}

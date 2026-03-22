@@ -22,6 +22,11 @@
     border-radius: 15px;
 }
 
+.contact-form .form-label {
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
 .contact-form .form-control {
     border-radius: 1rem;
 }
@@ -57,7 +62,7 @@
 }
 
 .contact-form .btnContact {
-    width: 50%;
+    width: 100%;
     border: none;
     border-radius: 1rem;
     padding: 1.5%;
@@ -65,6 +70,41 @@
     font-weight: 600;
     color: #fff;
     cursor: pointer;
+}
+
+.contact-actions {
+    display: grid;
+    gap: 10px;
+}
+
+.btnWhatsapp {
+    width: 100%;
+    border: none;
+    border-radius: 1rem;
+    padding: 10px 14px;
+    background: #1f9d55;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+}
+
+.contact-feedback {
+    margin-top: 8px;
+    margin-bottom: 0;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.contact-feedback.pending {
+    color: #555;
+}
+
+.contact-feedback.success {
+    color: #1f9d55;
+}
+
+.contact-feedback.error {
+    color: #c92a2a;
 }
 
 .btnContactSubmit {
@@ -75,4 +115,30 @@
     background-color: #0062cc;
     border: none;
     cursor: pointer;
+}
+
+@media (max-width: 991px) {
+    .contact-form {
+        margin: 24px auto;
+        width: 95%;
+    }
+
+    .contact-image img {
+        width: 70px;
+        margin-top: -30px;
+    }
+
+    .contact-form form {
+        padding: 10% 8%;
+    }
+
+    .contact-form h3 {
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+    .contact-form .btnContact {
+        width: 100%;
+        padding: 10px 14px;
+    }
 }

@@ -61,9 +61,53 @@
     font-size: 18px;
 }
 
-@media (max-width: 995px) {
-    .collapse:not(.show) {
-        display: flex;
+.main-navbar {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.68) 0%, rgba(0, 0, 0, 0) 100%);
+    border-radius: 0 0 12px 12px;
+    padding: 6px 10px;
+}
+
+.footer .col-2 {
+    min-width: 180px;
+}
+
+@media (max-width: 991px) {
+    .main-navbar {
+        background: rgba(0, 0, 0, 0.72);
     }
 
+    .main-navbar .navbar-collapse {
+        margin-top: 8px;
+    }
+
+    .titlePadding {
+        padding-top: 95px;
+    }
+
+    .titleTigre {
+        font-size: clamp(2rem, 9vw, 3rem);
+        line-height: 1.1;
+    }
+
+    .subTitleTigre {
+        font-size: clamp(1.25rem, 6vw, 2rem);
+        line-height: 1.2;
+    }
+
+    .cardModalidade,
+    .cardTreinar,
+    .cardBeneficios {
+        width: 100% !important;
+        margin-bottom: 16px;
+    }
+
+    .scrollable {
+        max-height: none;
+        overflow: visible;
+    }
+
+    .footer .col-2 {
+        min-width: 100%;
+        margin-bottom: 12px;
+    }
 }
