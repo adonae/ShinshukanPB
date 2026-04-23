@@ -1,3 +1,8 @@
+body {
+    background-color: #f5f1ea;
+    color: #1f1b16;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -40,6 +45,10 @@
 .main-navbar {
     font-size: 18px;
     color: #fff;
+    background: rgba(26, 22, 18, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 16px;
+    padding: 10px 14px;
 }
 
 .main-navbar .navbar-toggler {
@@ -52,23 +61,51 @@
 
 .social-links a {
     color: #fff !important;
+    font-size: 1.2rem;
 }
 
 .arrowDown {
-    display: inline-block;
-    width: 90px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    color: #201810;
+    font-size: 2.3rem;
 }
 
 .dropMenu {
-    background-color: rgba(255, 255, 255, 0);
-    border: none;
-    padding-top: 0;
-    padding-left: 10px;
+    background-color: rgba(251, 246, 238, 0.96);
+    border: 1px solid #d8c9b1;
+    border-radius: 12px;
+    padding: 8px;
+    min-width: 180px;
+    box-shadow: 0 12px 24px rgba(32, 24, 16, 0.08);
 }
 
 .dropMenuStyle {
-    color: white;
+    color: #2f261d;
     text-decoration: none;
+    display: block;
+    padding: 8px 10px;
+    border-radius: 8px;
+}
+
+.dropMenuStyle:hover {
+    background-color: #efe5d4;
+    color: #2f261d;
+}
+
+.btn-outline-info {
+    border-color: #7a5a2f;
+    color: #7a5a2f;
+}
+
+.btn-outline-info:hover,
+.btn-outline-info:focus {
+    background-color: #7a5a2f;
+    border-color: #7a5a2f;
+    color: #fff;
 }
 
 a:focus-visible,
