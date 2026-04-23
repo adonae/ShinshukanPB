@@ -108,14 +108,17 @@
     .container00.carrossel04,
     .container00.carrossel05,
     .container00.carrossel06 {
-        background-size: 40%;
-        background-position: right 24px top 80px;
+        background-size: 34%;
+        background-position: right 20px top 28px;
     }
 
     #overViewPosition {
         width: auto;
         margin-left: 0;
-        padding: 20px 14px;
+        padding: 220px 14px 20px;
+        background: rgba(255, 255, 255, 0.84);
+        border-radius: 14px;
+        backdrop-filter: blur(1px);
     }
 
     .kobudoHistoryCard {
@@ -126,5 +129,9 @@
         flex-direction: column;
         align-items: flex-start !important;
         margin-top: 16px;
+    }
+
+    .kobudoWeaponsSub {
+        max-width: 100%;
     }
 }
