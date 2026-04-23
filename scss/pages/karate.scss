@@ -16,7 +16,43 @@
 
 @media (max-width: 991px) {
     .container00.container02 {
-        background-position: 58% center;
+        position: relative;
+        overflow: hidden;
+        background-position: center center;
+    }
+
+    .container00.container02::before,
+    .container00.container02::after {
+        content: "";
+        position: absolute;
+        pointer-events: none;
+        z-index: 0;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        opacity: 0.96;
+    }
+
+    .container00.container02::before {
+        width: 170px;
+        height: 170px;
+        left: -58px;
+        bottom: 105px;
+        background-image: url(../../img/communPages/shinshukan.png);
+    }
+
+    .container00.container02::after {
+        width: 98px;
+        height: 98px;
+        right: 18px;
+        bottom: 150px;
+        background-image: url(../../img/communPages/tigre-branco-favicon.svg);
+    }
+
+    .container00.container02>.container,
+    .container00.container02>.container-fluid {
+        position: relative;
+        z-index: 1;
     }
 
     .old-karate {

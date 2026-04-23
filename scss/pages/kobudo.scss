@@ -108,17 +108,21 @@
     .container00.carrossel04,
     .container00.carrossel05,
     .container00.carrossel06 {
-        background-size: 34%;
-        background-position: right 20px top 28px;
+        background-size: 38%;
+        background-position: right 16px top 20px;
     }
 
     #overViewPosition {
         width: auto;
         margin-left: 0;
-        padding: 220px 14px 20px;
-        background: rgba(255, 255, 255, 0.84);
+        padding: 205px 14px 20px;
+        background: linear-gradient(180deg,
+                rgba(255, 255, 255, 0.04) 0,
+                rgba(255, 255, 255, 0.04) 130px,
+                rgba(255, 255, 255, 0.78) 175px,
+                rgba(255, 255, 255, 0.93) 100%);
         border-radius: 14px;
-        backdrop-filter: blur(1px);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
     }
 
     .kobudoHistoryCard {
