@@ -129,8 +129,8 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="txtMsg" class="form-label">Sua mensagem</label>
-                                <textarea id="txtMsg" name="txtMsg" class="form-control" placeholder="Sua mensagem"
-                                    style="width: 100%; height: 180px;" minlength="10" required></textarea>
+                                <textarea id="txtMsg" name="txtMsg" class="form-control contact-message w-100"
+                                    placeholder="Sua mensagem" minlength="10" required></textarea>
                                 <div class="invalid-feedback">Escreva uma mensagem com pelo menos 10 caracteres.</div>
                             </div>
                         </div>
@@ -139,9 +139,9 @@
             </main>
         </div>
 
-        <div class="container" style="height: 10px;"></div>
+        <div class="container spacer-10"></div>
         <hr>
-        <div class="container" style="height: 10px;"></div>
+        <div class="container spacer-10"></div>
         <footer>
             <div class="row footer justify-content-around">
                 <div class="col-2">
@@ -163,15 +163,15 @@
                 </div>
                 <div class="col-2">
                     <p class="h5"><i class="bi bi-award-fill"></i> Filiação</p>
-                    <img src="./img/communPages/shinshukan.png" alt="Logo da filiacao Shinshukan" style="width: 100px;"
+                    <img src="../img/communPages/shinshukan.png" alt="Logo da filiacao Shinshukan" class="footer-logo"
                         loading="lazy" decoding="async">
                 </div>
             </div>
             <hr>
-            <div class="container" style="height: 5px;"></div>
+            <div class="container spacer-5"></div>
             <p class="copy" style="text-align: center;">Copyright &copy;2026 Tigre Branco. Todos os direitos reservados.
             </p>
-            <div class="container" style="height: 5px;"></div>
+            <div class="container spacer-5"></div>
         </footer>
     </div>
 
@@ -250,8 +250,18 @@
                 const subject = document.getElementById('txtSubject').value.trim();
                 const message = document.getElementById('txtMsg').value.trim();
 
-                const text = `Ola! Meu nome e ${name}.%0AEmail: ${email}.%0AWhatsApp: ${phone}.%0AAssunto: ${subject}.%0A%0AMensagem:%0A${message}`;
-                window.open(`https://wa.me/5583986344422?text=${text}`, '_blank', 'noopener,noreferrer');
+                const text = [
+                    `Ola! Meu nome e ${name}.`,
+                    `Email: ${email}.`,
+                    `WhatsApp: ${phone}.`,
+                    `Assunto: ${subject}.`,
+                    '',
+                    'Mensagem:',
+                    message
+                ].join('\n');
+                const whatsappUrl = `https://wa.me/5583986344422?text=${encodeURIComponent(text)}`;
+
+                window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
             });
         })();
     </script>

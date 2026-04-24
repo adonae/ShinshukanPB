@@ -1,93 +1,91 @@
 # ShinshukanPB
 
-Site institucional da academia **Tigre Branco (Shinshukan PB)**, com foco em apresentação da escola, modalidades (Karatê e Kobu-do), genealogia e canais de contato.
+Site institucional da academia **Tigre Branco (Shinshukan PB)**, com foco na apresentacao da escola, modalidades, genealogia e canais de contato.
 
-## Visão geral
+## Visao geral
 
-O projeto é um site estático com múltiplas páginas em HTML, estilização com SCSS/CSS e apoio de bibliotecas via CDN (Bootstrap, Bootstrap Icons e AOS).
+O projeto e um site estatico com multiplas paginas em HTML, estilizadas com SCSS/CSS e bibliotecas carregadas por CDN.
 
 ## Tecnologias
 
 - HTML5
 - SCSS + CSS
-- Bootstrap 5 (CDN)
-- Bootstrap Icons (CDN)
-- AOS (Animate On Scroll)
+- JavaScript
+- Bootstrap 5.2.2 (CDN)
+- Bootstrap Icons 1.9.1 (CDN)
 
 ## Estrutura do projeto
 
 ```text
 ShinshukanPB/
-├── home.html
-├── html/
-│   ├── karate.html
-│   ├── karateGenealogia.html
-│   ├── kobudo.html
-│   └── contato.html
-├── scss/
-│   ├── style.scss
-│   ├── communElements/
-│   └── pages/
-├── css/
-│   ├── style.css
-│   └── style.css.map
-└── img/
+|-- index.html
+|-- html/
+|   |-- karate.html
+|   |-- karateGenealogia.html
+|   |-- kobudo.html
+|   `-- contato.html
+|-- scss/
+|   |-- style.scss
+|   |-- communElements/
+|   `-- pages/
+|-- css/
+|   |-- style.css
+|   `-- style.css.map
+`-- img/
 ```
 
 ## Como executar localmente
 
-Por ser um projeto estático, você pode abrir diretamente o `home.html` no navegador.
+Por ser um projeto estatico, voce pode abrir `index.html` diretamente no navegador.
 
-Para melhor experiência (rotas relativas e testes de formulário), prefira um servidor local:
+Para testar rotas relativas e o formulario de contato com mais previsibilidade, prefira um servidor local:
 
 ```bash
 cd ShinshukanPB
-python3 -m http.server 8000
+python -m http.server 8000
 ```
 
 Depois acesse:
 
-- `http://localhost:8000/home.html`
+- `http://localhost:8000/index.html`
 
-## Estilos (SCSS -> CSS)
+## Estilos
 
-O CSS carregado pelas páginas é o arquivo:
+O arquivo servido pelas paginas e:
 
 - `css/style.css`
 
-Quando alterar arquivos em `scss/`, gere novamente o CSS (se tiver Sass instalado):
+As fontes SCSS ficam em `scss/`. Quando houver alteracoes nessas fontes, gere novamente o CSS:
 
 ```bash
 sass scss/style.scss css/style.css --style=expanded
 ```
 
-## Página de contato
+## Pagina de contato
 
-A página `html/contato.html` possui:
+A pagina `html/contato.html` possui:
 
-- Envio por **Email** (FormSubmit, destino: Gmail configurado no formulário)
-- Envio por **WhatsApp** com mensagem pré-preenchida
-- Validação de campos no cliente
-- Feedback visual de sucesso/erro sem recarregar a página
+- envio por email via FormSubmit
+- envio por WhatsApp com mensagem pre-preenchida
+- validacao de campos no cliente
+- feedback visual sem recarregar a pagina
 
-### Observação importante sobre o email
-
-No primeiro uso do FormSubmit, é necessário confirmar o endereço de email de destino pela mensagem enviada pelo serviço.
+No primeiro uso do FormSubmit, e necessario confirmar o endereco de email de destino pelo fluxo do proprio servico.
 
 ## Melhorias recentes
 
-- Navegação mais acessível e responsiva
-- Ajustes de semântica e foco por teclado
-- Otimizações de UX na página de Kobu-do
-- Melhorias visuais e funcionais no formulário de contato
+- navegacao mais acessivel e responsiva
+- ajustes de semantica e foco por teclado
+- correcoes de links e caminhos relativos
+- melhorias visuais e funcionais no formulario de contato
 
-## Próximos passos sugeridos
+## Proximos passos sugeridos
 
-- Configurar domínio e deploy (Netlify, Vercel ou hospedagem tradicional)
-- Adicionar compressão/otimização de imagens
-- Integrar analytics para medir acessos e conversões
-- Criar testes de regressão visual das páginas principais
+- otimizar imagens e definir dimensoes explicitas nas midias principais
+- configurar deploy em hospedagem estatica
+- adicionar analytics
+- criar uma rotina simples de validacao HTML/CSS antes de publicar
 
-## Licença
+## Licenca
 
-Definir conforme a preferência do mantenedor (uso interno, aberto ou comercial).
+Definir conforme a preferencia do mantenedor.
