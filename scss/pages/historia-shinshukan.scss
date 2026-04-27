@@ -1,0 +1,37 @@
+.historia-shinshukan-section {
+    padding-bottom: 24px;
+}
+
+.historia-shinshukan-card {
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid #d8c9b1;
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 10px 24px rgba(32, 24, 16, 0.06);
+}
+
+.historia-shinshukan-card::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.historia-shinshukan-text {
+    line-height: 1.75;
+    margin-bottom: 0;
+}
+
+.historia-shinshukan-sources .card {
+    border: 1px solid #d8c9b1;
+    border-radius: 14px;
+}
+
+.historia-shinshukan-sources .card-body {
+    background: #fffaf2;
+}
+
+@media (max-width: 991px) {
+    .historia-shinshukan-card {
+        padding: 18px;
+    }
+}
