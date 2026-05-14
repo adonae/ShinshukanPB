@@ -1,28 +1,60 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@300;400;600&display=swap");
 
-body {
-  background-color: #f5f1ea;
-  color: #1f1b16;
+:root {
+  /* Cores */
+  --cor-primaria: #7a5a2f;
+  --cor-secundaria: #1f1b16;
+  --cor-fundo: #f5f1ea;
+  --cor-fundo-claro: #fffaf2;
+  --cor-branco: #ffffff;
+  --cor-cinza-claro: #EEEEEE;
+  --cor-borda: #d8c9b1;
+  --cor-texto-hover: #efe5d4;
+  --cor-whatsapp: #355e3b;
+  --cor-sucesso: #1f9d55;
+  --cor-erro: #c92a2a;
+  --cor-pendente: #555555;
+  
+  /* Sombras */
+  --sombra-suave: 0 10px 24px rgba(32, 24, 16, 0.06);
+  --sombra-media: 0 12px 26px rgba(32, 24, 16, 0.08);
+  --sombra-forte: 0 8px 18px rgba(0, 0, 0, 0.06);
+  
+  /* Bordas */
+  --borda-padrao: 1px solid var(--cor-borda);
+  --raio-padrao: 18px;
+  --raio-pequeno: 12px;
+  --raio-minimo: 8px;
+  
+  /* Espaçamentos */
+  --espaco-5: 5px;
+  --espaco-10: 10px;
+  --espaco-14: 14px;
+  --espaco-16: 16px;
+  --espaco-20: 20px;
+  --espaco-24: 24px;
+  --espaco-40: 40px;
+  
+  /* Tipografia */
+  --fonte-titulo: "Bebas Neue", cursive;
+  --fonte-texto: "Roboto Condensed", sans-serif;
 }
 
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
-  font-family: "Roboto Condensed", sans-serif;
+  box-sizing: border-box;
 }
 
-.sectionTitle {
-  font-family: "Bebas Neue", cursive;
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-secundaria);
+  font-family: var(--fonte-texto);
+  line-height: 1.6;
 }
 
-.container00 {
-  min-height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #EEEEEE;
-}
-
+/* Acessibilidade - Skip Link */
 .skip-link {
   position: absolute;
   left: -999px;
@@ -39,34 +71,215 @@ body {
   height: auto;
   padding: 8px 12px;
   border-radius: 6px;
-  background: #fff;
+  background: var(--cor-branco);
   color: #111;
   z-index: 9999;
+  outline: 3px solid #00c2ff;
+  outline-offset: 2px;
 }
 
-.main-navbar {
+/* Foco visível para elementos interativos */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #00c2ff;
+  outline-offset: 2px;
+}
+
+/* Tipografia */
+.section-title,
+.title-tigre,
+.sub-title-tigre,
+.card-title {
+  font-family: var(--fonte-titulo);
+  text-transform: uppercase;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: var(--espaco-40);
+  padding-top: var(--espaco-24);
+}
+
+/* Container principal com background */
+.container-principal {
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--cor-cinza-claro);
+}
+
+.container-principal.bg-home {
+  background-image: url(../img/communPages/bg-home.jpg);
+}
+
+.container-principal.bg-karate {
+  background-image: url(../img/karate/bg-karate.jpg);
+}
+
+.container-principal.bg-contato {
+  background-image: url(../img/contato/bg-contato.jpg);
+}
+
+/* Variações de background para Kobudo */
+.container-principal.bg-bo { background-image: url(../img/kobudo/bo.png); background-size: 30%; background-position: 75% 35%; }
+.container-principal.bg-nunchaku { background-image: url(../img/kobudo/nunchaku.png); background-size: 30%; background-position: 75% 35%; }
+.container-principal.bg-tunqua { background-image: url(../img/kobudo/tunqua.png); background-size: 30%; background-position: 75% 35%; }
+.container-principal.bg-kama { background-image: url(../img/kobudo/kama.png); background-size: 30%; background-position: 75% 35%; }
+.container-principal.bg-sai { background-image: url(../img/kobudo/sai.png); background-size: 30%; background-position: 75% 35%; }
+.container-principal.bg-eku { background-image: url(../img/kobudo/eku.png); background-size: 30%; background-position: 75% 35%; }
+
+/* Navegação */
+.navbar-principal {
   font-size: 18px;
-  color: #fff;
+  color: var(--cor-branco);
   background: rgba(26, 22, 18, 0.78);
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 16px;
-  padding: 10px 14px;
+  padding: 10px var(--espaco-14);
+  margin-top: var(--espaco-14);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
 }
 
-.main-navbar .navbar-toggler {
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--cor-branco) !important;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.navbar-toggler {
   border-color: rgba(255, 255, 255, 0.7);
+  background: transparent;
+  padding: 5px 10px;
+  cursor: pointer;
 }
 
-.main-navbar .navbar-toggler-icon {
+.navbar-toggler-icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.7)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
   filter: invert(100%) brightness(2);
 }
 
-.social-links a {
-  color: #fff !important;
-  font-size: 1.2rem;
+.navbar-collapse {
+  width: 100%;
+  display: none;
 }
 
-.arrowDown {
+.navbar-collapse.show {
+  display: block;
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  color: var(--cor-branco) !important;
+  text-decoration: none;
+  padding: 5px 10px;
+  display: block;
+}
+
+.nav-link:hover,
+.nav-link[aria-current="page"] {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* Dropdown Menu */
+.dropdown-menu-custom {
+  background-color: rgba(251, 246, 238, 0.96);
+  border: var(--borda-padrao);
+  border-radius: var(--raio-pequeno);
+  padding: 8px;
+  min-width: 180px;
+  box-shadow: var(--sombra-media);
+  list-style: none;
+  position: absolute;
+  z-index: 1000;
+  display: none;
+  top: 100%;
+  left: 0;
+}
+
+.dropdown:hover .dropdown-menu-custom {
+  display: block;
+}
+
+.dropdown-item {
+  color: #2f261d;
+  text-decoration: none;
+  display: block;
+  padding: 8px 10px;
+  border-radius: var(--raio-minimo);
+}
+
+.dropdown-item:hover {
+  background-color: var(--cor-texto-hover);
+}
+
+/* Links sociais */
+.social-links {
+  display: flex;
+  gap: var(--espaco-14);
+  align-items: center;
+}
+
+.social-links a {
+  color: var(--cor-branco) !important;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+/* Títulos da Home */
+.title-padding {
+  padding-top: 150px;
+}
+
+.title-padding-karate,
+.title-padding-contato {
+  padding-top: 100px;
+}
+
+.title-tigre {
+  font-size: clamp(2rem, 9vw, 67px);
+  color: var(--cor-branco);
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.55);
+  text-align: center;
+  line-height: 1.1;
+}
+
+.sub-title-tigre {
+  font-size: clamp(1.25rem, 6vw, 44px);
+  color: var(--cor-branco);
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.55);
+  text-align: center;
+  line-height: 1.2;
+}
+
+.arrow-down {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -76,118 +289,37 @@ body {
   font-size: 2.3rem;
 }
 
-.dropMenu {
-  background-color: rgba(251, 246, 238, 0.96);
-  border: 1px solid #d8c9b1;
-  border-radius: 12px;
-  padding: 8px;
-  min-width: 180px;
-  box-shadow: 0 12px 24px rgba(32, 24, 16, 0.08);
+/* Cards - Componente unificado */
+.card-padrao {
+  border: var(--borda-padrao);
+  border-radius: var(--raio-padrao);
+  box-shadow: var(--sombra-suave);
+  overflow: hidden;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto var(--espaco-16);
+  background: var(--cor-branco);
 }
 
-.dropMenuStyle {
-  color: #2f261d;
-  text-decoration: none;
+.card-padrao img {
+  width: 100%;
+  height: auto;
   display: block;
-  padding: 8px 10px;
-  border-radius: 8px;
 }
 
-.dropMenuStyle:hover {
-  background-color: #efe5d4;
-  color: #2f261d;
+.card-body {
+  padding: var(--espaco-16);
 }
 
-.btn-outline-info {
-  border-color: #7a5a2f;
-  color: #7a5a2f;
+.card-title {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: var(--espaco-10);
 }
 
-.btn-outline-info:hover,
-.btn-outline-info:focus {
-  background-color: #7a5a2f;
-  border-color: #7a5a2f;
-  color: #fff;
-}
-
-.spacer-5 {
-  height: 5px;
-}
-
-.spacer-10 {
-  height: 10px;
-}
-
-.spacer-20 {
-  height: 20px;
-}
-
-.spacer-40 {
-  height: 40px;
-}
-
-.cardBeneficios {
-  width: min(100%, 350px);
-}
-
-.footer-logo {
-  width: 100px;
-}
-
-.text-justify {
+.card-text {
   text-align: justify;
-}
-
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-  outline: 3px solid #00c2ff;
-  outline-offset: 2px;
-}
-
-.container00.container01 {
-  background-image: url(../img/communPages/bg-home.jpg);
-}
-
-.titlePadding {
-  padding-top: 150px;
-}
-
-.titleTigre {
-  font-family: "Bebas Neue", cursive;
-  font-size: 67px;
-  color: white;
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.55);
-}
-
-.subTitleTigre {
-  font-family: "Bebas Neue", cursive;
-  font-size: 44px;
-  color: white;
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.55);
-}
-
-.cardModalidade {
-  border: 1px solid #d8c9b1;
-  border-radius: 18px;
-  box-shadow: 0 10px 24px rgba(32, 24, 16, 0.06);
-  overflow: hidden;
-}
-
-.cardTreinar {
-  border: 1px solid #d8c9b1;
-  border-radius: 18px;
-  box-shadow: 0 10px 24px rgba(32, 24, 16, 0.06);
-  overflow: hidden;
-  width: 350px;
-}
-
-.cardBeneficios {
-  border: 1px solid #d8c9b1;
-  border-radius: 18px;
-  box-shadow: 0 10px 24px rgba(32, 24, 16, 0.06);
-  overflow: hidden;
+  line-height: 1.7;
 }
 
 .scrollable {
@@ -195,328 +327,249 @@ textarea:focus-visible {
   max-height: 300px;
 }
 
-.card-title {
-  font-family: "Bebas Neue", cursive;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 22px;
+/* Botões */
+.btn-outline-info {
+  display: inline-block;
+  border: 2px solid var(--cor-primaria);
+  color: var(--cor-primaria);
+  background: transparent;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.card-text {
-  font-family: "Roboto Condensed", sans-serif;
-  text-align: justify;
+.btn-outline-info:hover,
+.btn-outline-info:focus {
+  background-color: var(--cor-primaria);
+  border-color: var(--cor-primaria);
+  color: var(--cor-branco);
 }
 
+/* Footer */
 .footer {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: var(--fonte-texto);
+  padding: var(--espaco-24) 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--espaco-24);
+  margin-bottom: var(--espaco-24);
+}
+
+.footer-logo {
+  width: 100px;
 }
 
 .copy {
-  font-family: "Roboto Condensed", sans-serif;
   font-size: 18px;
+  text-align: center;
 }
 
-.main-navbar {
-  margin-top: 14px;
+/* Utilitários de espaçamento (apenas quando necessário) */
+.spacer {
+  height: var(--espaco-40);
 }
 
-.footer .col-2 {
-  min-width: 180px;
+.spacer-small {
+  height: var(--espaco-10);
 }
 
-.container00.container02 {
-  background-image: url(../img/karate/bg-karate.jpg);
+.divider {
+  border: none;
+  border-top: 1px solid var(--cor-borda);
+  margin: var(--espaco-24) 0;
 }
 
-.titlePaddingKarate {
-  padding-top: 100px;
+/* Estilos específicos para páginas de história */
+.historia-section {
+  padding-bottom: var(--espaco-24);
 }
 
-.old-karate {
-  width: 50%;
-  float: left;
-  padding-right: 5px;
+.historia-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: var(--borda-padrao);
+  border-radius: var(--raio-padrao);
+  padding: var(--espaco-24);
+  box-shadow: var(--sombra-suave);
+  margin-bottom: var(--espaco-24);
 }
 
-.arrow {
-  width: 30px;
-}
-
-.old-kobudo {
-  width: 35%;
-  float: left;
-  padding-right: 5px;
-  margin-bottom: 8px;
-}
-
-.boxKobudo {
-  height: 500px;
-  overflow: scroll;
-}
-
-.kobudoHistorySection {
-  padding: 8px 0 24px;
-}
-
-.kobudoHistoryCard {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid #d6d6d6;
-  border-radius: 12px;
-  padding: 22px;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
-}
-
-.kobudoHistoryCard::after {
+.historia-card::after {
   content: "";
   display: table;
   clear: both;
 }
 
-.kobudoHistoryText {
+.historia-text {
+  line-height: 1.75;
   text-align: justify;
-  line-height: 1.7;
-  margin-bottom: 0;
 }
 
-.kobudoWeaponsHeader {
-  margin-top: 8px;
-  margin-bottom: 10px;
+.old-image {
+  width: 50%;
+  float: left;
+  padding-right: 5px;
+  margin-bottom: var(--espaco-14);
+}
+
+.box-scroll {
+  height: 500px;
+  overflow: auto;
+}
+
+.kobudo-weapons-header {
+  display: flex;
   align-items: flex-end;
-  gap: 10px;
+  gap: var(--espaco-10);
+  margin-top: var(--espaco-10);
+  margin-bottom: var(--espaco-10);
 }
 
-.kobudoWeaponsSub {
-  margin-bottom: 0;
+/* Collapse component */
+.collapse-content {
+  display: none;
 }
 
-.container00.carrossel01 {
-  background-image: url(../img/kobudo/bo.png);
-  background-size: 30%;
-  background-position: 75% 35%;
+.collapse-content.show {
+  display: block;
 }
 
-.container00.carrossel02 {
-  background-image: url(../img/kobudo/nunchaku.png);
-  background-size: 30%;
-  background-position: 75% 35%;
-}
-
-.container00.carrossel03 {
-  background-image: url(../img/kobudo/tunqua.png);
-  background-size: 30%;
-  background-position: 75% 35%;
-}
-
-.container00.carrossel04 {
-  background-image: url(../img/kobudo/kama.png);
-  background-size: 30%;
-  background-position: 75% 35%;
-}
-
-.container00.carrossel05 {
-  background-image: url(../img/kobudo/sai.png);
-  background-size: 30%;
-  background-position: 75% 35%;
-}
-
-.container00.carrossel06 {
-  background-image: url(../img/kobudo/eku.png);
-  background-size: 30%;
-  background-position: 75% 35%;
-}
-
-#overViewPosition {
-  width: 500px;
-  margin-left: 13%;
-  padding-top: 1%;
-}
-
-.container00.container03 {
-  background-image: url(../img/contato/bg-contato.jpg);
-}
-
-.titlePaddingContato {
-  padding-top: 100px;
-}
-
-.tigre {
-  width: 200px;
-  border-radius: 180px;
-}
-
+/* Formulário de contato */
 .contact-form {
-  background: #fff;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  margin-left: 5%;
+  background: var(--cor-branco);
+  margin: 5% auto;
   width: 60%;
   border-radius: 15px;
-  border: 1px solid #d8c9b1;
-  box-shadow: 0 12px 26px rgba(32, 24, 16, 0.08);
-}
-
-.contact-form .form-label {
-  margin-bottom: 6px;
-  font-weight: 600;
-}
-
-.contact-form .form-control {
-  border-radius: 1rem;
-}
-
-.contact-message {
-  min-height: 180px;
+  border: var(--borda-padrao);
+  box-shadow: var(--sombra-media);
+  padding: 14%;
 }
 
 .contact-image {
   text-align: center;
 }
 
-.contact-image img {
-  border-radius: 6rem;
-  width: 11%;
+.tigre {
+  width: 200px;
+  border-radius: 180px;
   margin-top: -3%;
 }
 
-.contact-form form {
-  padding: 14%;
-}
-
-.contact-form form .row {
-  margin-bottom: -7%;
-}
-
-.form-group {
-  padding-bottom: 10px;
-}
-
 .contact-form h3 {
-  margin-bottom: 8%;
+  margin-bottom: var(--espaco-24);
   margin-top: -10%;
   text-align: center;
   color: #5c4323;
 }
 
-.contact-form .btnContact {
-  width: 100%;
-  border: none;
-  border-radius: 1rem;
-  padding: 1.5%;
-  background: #7a5a2f;
+.form-group {
+  padding-bottom: var(--espaco-10);
+}
+
+.form-label {
+  margin-bottom: 6px;
   font-weight: 600;
-  color: #fff;
-  cursor: pointer;
+  display: block;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ced4da;
+  border-radius: 1rem;
+  font-family: inherit;
+}
+
+.form-control:focus {
+  outline: 3px solid #00c2ff;
+  outline-offset: 2px;
+  border-color: #00c2ff;
+}
+
+.contact-message {
+  min-height: 180px;
+  resize: vertical;
 }
 
 .contact-actions {
   display: grid;
-  gap: 10px;
+  gap: var(--espaco-10);
 }
 
+.btnContact,
 .btnWhatsapp {
   width: 100%;
   border: none;
   border-radius: 1rem;
   padding: 10px 14px;
-  background: #355e3b;
   font-weight: 600;
-  color: #fff;
+  color: var(--cor-branco);
   cursor: pointer;
+  font-family: inherit;
+}
+
+.btnContact {
+  background: var(--cor-primaria);
+}
+
+.btnWhatsapp {
+  background: var(--cor-whatsapp);
+}
+
+.btnContact:disabled,
+.btnWhatsapp:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .contact-feedback {
-  margin-top: 8px;
+  margin-top: var(--espaco-10);
   margin-bottom: 0;
   font-weight: 600;
   font-size: 0.95rem;
 }
 
-.contact-feedback.pending {
-  color: #555;
+.contact-feedback.pending { color: var(--cor-pendente); }
+.contact-feedback.success { color: var(--cor-sucesso); }
+.contact-feedback.error { color: var(--cor-erro); }
+
+/* Validação de formulário */
+.form-control.invalid {
+  border-color: var(--cor-erro);
 }
 
-.contact-feedback.success {
-  color: #1f9d55;
+.invalid-feedback {
+  color: var(--cor-erro);
+  font-size: 0.875rem;
+  display: none;
 }
 
-.contact-feedback.error {
-  color: #c92a2a;
+.form-control.invalid + .invalid-feedback {
+  display: block;
 }
 
-.btnContactSubmit {
-  width: 50%;
-  border-radius: 1rem;
-  padding: 1.5%;
-  color: #fff;
-  background-color: #0062cc;
-  border: none;
-  cursor: pointer;
-}
-
-.historia-shinshukan-section {
-  padding-bottom: 24px;
-}
-
-.historia-shinshukan-card {
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid #d8c9b1;
-  border-radius: 18px;
-  padding: 24px;
-  box-shadow: 0 10px 24px rgba(32, 24, 16, 0.06);
-}
-
-.historia-shinshukan-card::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.historia-shinshukan-text {
-  line-height: 1.75;
-  margin-bottom: 0;
-}
-
-.historia-shinshukan-sources .card {
-  border: 1px solid #d8c9b1;
-  border-radius: 14px;
-}
-
-.historia-shinshukan-sources .card-body {
-  background: #fffaf2;
-}
-
+/* Responsividade */
 @media (max-width: 991px) {
-  .container00.container01 {
+  .container-principal.bg-home,
+  .container-principal.bg-karate {
     background-position: 60% center;
   }
 
-  .main-navbar {
+  .navbar-principal {
     background: rgba(26, 22, 18, 0.84);
   }
 
-  .main-navbar .navbar-collapse {
-    margin-top: 8px;
-  }
-
-  .titlePadding {
+  .title-padding {
     padding-top: 95px;
   }
 
-  .titleTigre {
-    font-size: clamp(2rem, 9vw, 3rem);
-    line-height: 1.1;
-  }
-
-  .subTitleTigre {
-    font-size: clamp(1.25rem, 6vw, 2rem);
-    line-height: 1.2;
-  }
-
-  .cardModalidade,
-  .cardTreinar,
-  .cardBeneficios {
-    width: 100% !important;
-    margin-bottom: 16px;
+  .card-padrao {
+    max-width: 100%;
+    margin-bottom: var(--espaco-16);
   }
 
   .scrollable {
@@ -524,70 +577,32 @@ textarea:focus-visible {
     overflow: visible;
   }
 
-  .footer .col-2 {
-    min-width: 100%;
-    margin-bottom: 12px;
-  }
-
-  .container00.container02 {
-    background-position: 60% center;
-  }
-
-  .old-karate {
+  .old-image {
     width: 100%;
     float: none;
     padding-right: 0;
-    margin-bottom: 14px;
   }
 
-  .old-kobudo {
-    width: 100%;
-    float: none;
-    padding-right: 0;
-    margin-bottom: 14px;
-  }
-
-  .boxKobudo {
+  .box-scroll {
     height: auto;
     overflow: visible;
   }
 
-  .container00.carrossel01,
-  .container00.carrossel02,
-  .container00.carrossel03,
-  .container00.carrossel04,
-  .container00.carrossel05,
-  .container00.carrossel06 {
+  .container-principal[class*="bg-"] {
     background-size: 38%;
     background-position: right 16px top 20px;
   }
 
-  #overViewPosition {
-    width: auto;
-    margin-left: 0;
-    padding: 205px 14px 20px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0) 120px, rgba(255, 255, 255, 0.55) 170px, rgba(255, 255, 255, 0.92) 100%);
-    border-radius: 14px;
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
-  }
-
-  .kobudoHistoryCard {
-    padding: 16px;
-  }
-
-  .kobudoWeaponsHeader {
+  .kobudo-weapons-header {
     flex-direction: column;
     align-items: flex-start !important;
-    margin-top: 16px;
-  }
-
-  .kobudoWeaponsSub {
-    max-width: 100%;
+    margin-top: var(--espaco-16);
   }
 
   .contact-form {
-    margin: 24px auto;
+    margin: var(--espaco-24) auto;
     width: 95%;
+    padding: 10% 8%;
   }
 
   .contact-image img {
@@ -595,21 +610,15 @@ textarea:focus-visible {
     margin-top: -30px;
   }
 
-  .contact-form form {
-    padding: 10% 8%;
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--espaco-16);
   }
-
-  .contact-form h3 {
-    margin-top: 0;
-    margin-bottom: 20px;
-  }
-
-  .contact-form .btnContact {
+  
+  .social-links {
+    order: 3;
     width: 100%;
-    padding: 10px 14px;
-  }
-
-  .historia-shinshukan-card {
-    padding: 18px;
+    justify-content: center;
+    margin-top: 10px;
   }
 }
