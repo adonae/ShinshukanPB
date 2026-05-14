@@ -23,6 +23,49 @@ body {
   background-color: #EEEEEE;
 }
 
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  left: 12px;
+  top: 12px;
+  width: auto;
+  height: auto;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: #fff;
+  color: #111;
+  z-index: 9999;
+}
+
+.main-navbar {
+  font-size: 18px;
+  color: #fff;
+  background: rgba(26, 22, 18, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 16px;
+  padding: 10px 14px;
+}
+
+.main-navbar .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.main-navbar .navbar-toggler-icon {
+  filter: invert(100%) brightness(2);
+}
+
+.social-links a {
+  color: #fff !important;
+  font-size: 1.2rem;
+}
+
 .arrowDown {
   display: inline-flex;
   align-items: center;
@@ -95,6 +138,14 @@ body {
   text-align: justify;
 }
 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #00c2ff;
+  outline-offset: 2px;
+}
+
 .container00.container01 {
   background-image: url(../img/communPages/bg-home.jpg);
 }
@@ -165,6 +216,14 @@ body {
   font-size: 18px;
 }
 
+.main-navbar {
+  margin-top: 14px;
+}
+
+.footer .col-2 {
+  min-width: 180px;
+}
+
 .container00.container02 {
   background-image: url(../img/karate/bg-karate.jpg);
 }
@@ -228,38 +287,6 @@ body {
 
 .kobudoWeaponsSub {
   margin-bottom: 0;
-}
-
-.historia-shinshukan-section {
-  padding-bottom: 24px;
-}
-
-.historia-shinshukan-card {
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid #d8c9b1;
-  border-radius: 18px;
-  padding: 24px;
-  box-shadow: 0 10px 24px rgba(32, 24, 16, 0.06);
-}
-
-.historia-shinshukan-card::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.historia-shinshukan-text {
-  line-height: 1.75;
-  margin-bottom: 0;
-}
-
-.historia-shinshukan-sources .card {
-  border: 1px solid #d8c9b1;
-  border-radius: 14px;
-}
-
-.historia-shinshukan-sources .card-body {
-  background: #fffaf2;
 }
 
 .container00.carrossel01 {
@@ -326,6 +353,11 @@ body {
   border-radius: 15px;
   border: 1px solid #d8c9b1;
   box-shadow: 0 12px 26px rgba(32, 24, 16, 0.08);
+}
+
+.contact-form .form-label {
+  margin-bottom: 6px;
+  font-weight: 600;
 }
 
 .contact-form .form-control {
@@ -421,64 +453,36 @@ body {
   cursor: pointer;
 }
 
-.skip-link {
-  position: absolute;
-  left: -999px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
+.historia-shinshukan-section {
+  padding-bottom: 24px;
 }
 
-.skip-link:focus {
-  left: 12px;
-  top: 12px;
-  width: auto;
-  height: auto;
-  padding: 8px 12px;
-  border-radius: 6px;
-  background: #fff;
-  color: #111;
-  z-index: 9999;
+.historia-shinshukan-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #d8c9b1;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 10px 24px rgba(32, 24, 16, 0.06);
 }
 
-.main-navbar {
-  font-size: 18px;
-  color: #fff;
-  background: rgba(26, 22, 18, 0.78);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 16px;
-  padding: 10px 14px;
+.historia-shinshukan-card::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-.main-navbar .navbar-toggler {
-  border-color: rgba(255, 255, 255, 0.7);
+.historia-shinshukan-text {
+  line-height: 1.75;
+  margin-bottom: 0;
 }
 
-.main-navbar .navbar-toggler-icon {
-  filter: invert(100%) brightness(2);
+.historia-shinshukan-sources .card {
+  border: 1px solid #d8c9b1;
+  border-radius: 14px;
 }
 
-.social-links a {
-  color: #fff !important;
-  font-size: 1.2rem;
-}
-
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-  outline: 3px solid #00c2ff;
-  outline-offset: 2px;
-}
-
-.contact-form .form-label {
-  margin-bottom: 6px;
-  font-weight: 600;
-}
-
-.footer .col-2 {
-  min-width: 180px;
+.historia-shinshukan-sources .card-body {
+  background: #fffaf2;
 }
 
 @media (max-width: 991px) {
@@ -492,10 +496,6 @@ textarea:focus-visible {
 
   .main-navbar .navbar-collapse {
     margin-top: 8px;
-  }
-
-  .main-navbar {
-    margin-top: 14px;
   }
 
   .titlePadding {
@@ -524,11 +524,22 @@ textarea:focus-visible {
     overflow: visible;
   }
 
+  .footer .col-2 {
+    min-width: 100%;
+    margin-bottom: 12px;
+  }
+
   .container00.container02 {
     background-position: 60% center;
   }
 
-  .old-karate,
+  .old-karate {
+    width: 100%;
+    float: none;
+    padding-right: 0;
+    margin-bottom: 14px;
+  }
+
   .old-kobudo {
     width: 100%;
     float: none;
@@ -601,11 +612,4 @@ textarea:focus-visible {
   .historia-shinshukan-card {
     padding: 18px;
   }
-
-  .footer .col-2 {
-    min-width: 100%;
-    margin-bottom: 12px;
-  }
 }
-
-/*# sourceMappingURL=style.css.map */
